@@ -1,0 +1,45 @@
+Work on this all on your own.  Feel free to use Google, StackOverflow, MSDN, other online references, any libraries you may find useful, but the code should be 100% written by you. 
+When submitting your code, please give an indication of how long you worked on it and which requirements below you fully completed in your solution. 
+
+This exercise is due: two weeks from the date you receive it. 
+
+Scenario
+Create a simple blog website using Python, Django web framework, React.js on the frontend and PostgreSQL as a database with the following functionality:
+
+The Must Haves: 
+    Make sure your solution does at least these steps:
+        1. Register & Login
+            a. New users should be able to register from the front page
+            b. Anyone can make an account
+        2. Create, Read, Update and Delete a new blog post (title, body)
+            a. Blogs should be associated with the author's name
+            b. Posts should display the date created
+            c. Updating and Deleting posts should only be allowed by the User that made them
+        3. Viewing posts on a front page
+            a. Display all posts by all authors in order of newest first
+            b. Filter by Author
+        Technical requirements include: 
+            * Use decent CSS to make the home page look nice
+            * Use AJAX to have a continuously updating front page
+                o When new blogs are submitted, add them to the top of the front page
+
+Bonus:
+    Do as many of these as time permits.  It's your call to decide which you'd like to implement.  
+    The point values listed next to each item do not necessarily denote the level of difficult per item, but are rather a value for how important these items are to us. 
+        1. (10 pts) Responsive design to support mobile or tablet form factors. May use a front-end framework like Bootstrap for this. 
+        2. (7 pts) Use Repository Pattern to handle data access through Entity Framework 
+        3. (6 pts) Use Entity Framework Code First 
+        4. (5 pts) Allow authenticated users (including non-admins) to post comments 
+            a. Make a comment system
+            b. Make the comment system available for only currently logged in users
+        5. (3 pts) Third-party social integration on individual posts, e.g. Facebook 'Like'
+        6. (2 pts) Get an RSS feed 
+            a. Generate a feed that users can subscribe to in their RSS reader of choice
+
+Conclusion:
+When you�re done, please send back:
+* Your code through a link to your Github
+* Instructions on getting your solution to run (if it�s more than just F5 in VS)
+* A list of the items above that you implemented / attempted to implement
+* How long you spent on the entire solution (including research, code time, sending)
+
