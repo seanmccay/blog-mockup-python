@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.path.join(BASE_DIR, 'SmallBlog'),
         'HOST': 'http://localhost:8000/',
-        'USER': 'postgre',
-        'PASSWORD': 'Finley1!',
+        'USER': 'blog_service_account',
+        'PASSWORD': '!P@ssw0rd',
     }
 }
 
