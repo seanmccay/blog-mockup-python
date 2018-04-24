@@ -7,12 +7,11 @@ class User(models.Model):
 class BlogPost(models.Model):
     title: models.CharField(max_length=50)
     content: models.CharField(max_length=max)
-    date: models.DateTimeField()
-    user: models.ForeignKey(User, on_delete=models.CASCADE)
+    date: models.DateTimeField('date posted')
+    username: models.ForeignKey(User, on_delete=models.CASCADE)
     
 class Comment(models.Model):
     blogpost_id: models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     content: models.CharField(max_length=250)
-    date: models.DateTimeField()
-    user: models.ForeignKey(User, on_delete=models.CASCADE) 
-
+    date: models.DateTimeField('date submitted')
+    username: models.ForeignKey(User, on_delete=models.CASCADE) 

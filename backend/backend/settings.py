@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'api',
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,9 +76,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'SmallBlog'),
-        'HOST': 'http://localhost:8000/',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'SmallBlog',
+        'HOST': '',
+        'PORT': '',
         'USER': 'blog_service_account',
         'PASSWORD': '!P@ssw0rd',
     }
