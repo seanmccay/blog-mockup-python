@@ -1,17 +1,24 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
-class User(models.Model):
-    username: models.CharField(max_length=25, primary_key=True)
-    display_name: models.CharField(max_length=50)
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
 
-class BlogPost(models.Model):
-    title: models.CharField(max_length=50)
-    content: models.CharField(max_length=max)
-    date: models.DateTimeField('date posted')
-    username: models.ForeignKey(User, on_delete=models.CASCADE)
+class Post(models.Model):
+    title = models.TextField(max_length=50)
+    body = models.TextField()
+    published_on = models.DateTimeField('date published', auto_now_add=True)
+    user = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
     
+
 class Comment(models.Model):
-    blogpost_id: models.ForeignKey(BlogPost, on_delete=models.CASCADE)
-    content: models.CharField(max_length=250)
-    date: models.DateTimeField('date submitted')
-    username: models.ForeignKey(User, on_delete=models.CASCADE) 
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.TextField(max_length=250)
+    submitted_at = models.DateTimeField('date submitted', auto_now_add=True)
+    user = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE) 
