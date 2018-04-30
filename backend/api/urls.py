@@ -2,6 +2,7 @@ from django.conf.urls import url, include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from rest_framework.authtoken import views as drf_views
+from api import views
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -22,6 +23,7 @@ router.register(r'users', UserViewSet)
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
+    url(r'^$', views.api_root),
     url(r'^', include(router.urls)),
     url(r'^auth$', drf_views.obtain_auth_token, name='auth')
-]
+] 

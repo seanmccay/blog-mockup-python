@@ -11,7 +11,7 @@ This is a mock blog application built with Python/Django and React. I decided to
 - start the Python virtual environment
     - execute the 'activate' script located in `blog-mockup-python\backend\env\Scripts`
 - Migrate model changes to 'SmallBlog' db
-    - migrations should be included so just go to `blog-mockup-python\backend\api` directory and execute `python manage.py migrate` in order to create all necessary tables
+    - migrations should be included so just go to `blog-mockup-python\backend` directory and execute `python manage.py migrate` in order to create all necessary tables
 
 ## How to start it up
 1. make sure PostgreSQL is running
